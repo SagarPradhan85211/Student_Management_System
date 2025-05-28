@@ -1,8 +1,8 @@
 # Student MAnagement System using React Framework
 
-* Frontend
+## Frontend
 - React Framework
 
-* Backend
+## Backend
 - NodeJs
 - MySQl
