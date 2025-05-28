@@ -1,4 +1,4 @@
-# Student Management System using React Framework
+# Student Management System using React
 
 ### Frontend
 - React Framework
