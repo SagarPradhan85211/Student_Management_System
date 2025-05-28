@@ -5,4 +5,4 @@
 
 ### Backend
 - NodeJs
-- MySQl
+- MySQL
