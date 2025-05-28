@@ -1,0 +1,51 @@
+.App {
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1{
+    font-size: 50px;
+    font-style: oblique;
+    color: blue;
+  }
+  
+  .add-student-form {
+    margin-bottom: 20px;
+  }
+  
+  input {
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 5px 10px;
+  }
+  
+  .tableclass {
+    display: flex;
+    justify-content: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+  th, td {
+    border: 1px solid #070707;
+    padding: 8px;
+  }
+
+  .search-student {
+    margin: 20px 0;
+  }
+  
+  .search-student input {
+    padding: 6px;
+    width: 300px;
+    font-size: 16px;
+  }
+  
+  
