@@ -41,7 +41,6 @@ function StudentList() {
     }
 
     if (isEditing) {
-      // UPDATE
       axios.put(`http://localhost:5000/api/students/${editId}`, {
         name, email, phone, address
       }).then(() => {
@@ -49,7 +48,6 @@ function StudentList() {
         resetForm();
       }).catch(err => console.error('Error updating student:', err));
     } else {
-      // ADD
       axios.post('http://localhost:5000/api/students', {
         name, email, phone, address
       }).then(() => {
@@ -124,35 +122,37 @@ function StudentList() {
       </div>
 
       <div className="tableclass">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredStudents.length === 0 ? (
-              <tr><td colSpan="5">No students found.</td></tr>
-            ) : (
-              filteredStudents.map(student => (
-                <tr key={student.id}>
-                  <td>{student.name}</td>
-                  <td>{student.email}</td>
-                  <td>{student.phone || '-'}</td>
-                  <td>{student.address || '-'}</td>
-                  <td>
-                    <button onClick={() => handleEdit(student)}>Edit</button>
-                    <button onClick={() => deleteStudent(student.id)}>Delete</button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+        <div className="table-wrapper">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredStudents.length === 0 ? (
+                <tr><td colSpan="6">No students found.</td></tr>
+              ) : (
+                filteredStudents.map(student => (
+                  <tr key={student.id}>
+                    <td>{student.name}</td>
+                    <td>{student.email}</td>
+                    <td>{student.phone || '-'}</td>
+                    <td>{student.address || '-'}</td>
+                    <td>
+                      <button onClick={() => handleEdit(student)}>Edit</button>
+                      <button onClick={() => deleteStudent(student.id)}>Delete</button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
