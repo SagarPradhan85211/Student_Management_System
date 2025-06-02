@@ -1,17 +1,9 @@
 services:
   - type: web
-    name: backend-service # Name for your backend service
-    env: node
-    repo: ./backend # Path to your backend folder
-    buildCommand: |
-      npm install
-    startCommand: |
-      node server.js
-    
-  # - type: static
-  #   name: frontend-service # Name for your frontend service
-  #   repo: ./frontend # Path to your frontend folder
-  #   publishPath: ./build
-  #   buildCommand: |
-  #     npm install
-  #     npm run build
+    name: student-management-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    repo: render.yml
