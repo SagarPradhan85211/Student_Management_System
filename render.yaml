@@ -1,23 +1,17 @@
 services:
   - type: web
-    name: student-management-backend
+    name: backend-service # Name for your backend service
     env: node
-    plan: free
-    buildCommand: npm install
-    startCommand: node server.js
-    rootDir: backend
-    envVars:
-      - key: NODE_ENV
-        value: production
-
-  - type: web
-    name: student-management-frontend
-    env: node
-    plan: free
-    buildCommand: npm install && npm run build
-    staticPublishPath: build
-    rootDir: frontend
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    repo: ./backend # Path to your backend folder
+    buildCommand: |
+      npm install
+    startCommand: |
+      node server.js
+    
+  - type: static
+    name: frontend-service # Name for your frontend service
+    repo: ./frontend # Path to your frontend folder
+    publishPath: ./build
+    buildCommand: |
+      npm install
+      npm run build
