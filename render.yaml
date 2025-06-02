@@ -8,10 +8,10 @@ services:
     startCommand: |
       node server.js
     
-  - type: static
-    name: frontend-service # Name for your frontend service
-    repo: ./frontend # Path to your frontend folder
-    publishPath: ./build
-    buildCommand: |
-      npm install
-      npm run build
+  # - type: static
+  #   name: frontend-service # Name for your frontend service
+  #   repo: ./frontend # Path to your frontend folder
+  #   publishPath: ./build
+  #   buildCommand: |
+  #     npm install
+  #     npm run build
